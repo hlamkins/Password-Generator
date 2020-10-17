@@ -12,6 +12,7 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// Function created to prompt user for variables to password
 function generatePassword() {
   let passLength = prompt("How many characters should your password contain?");
   if (passLength >= 8 && passLength <= 148) {
@@ -33,6 +34,7 @@ function generatePassword() {
 
   let eligibleChars = "";
 
+  // Statements to add characters according to user selections
   if (lowerCase === true) {
     eligibleChars = eligibleChars + lower;
   }
@@ -50,12 +52,13 @@ function generatePassword() {
   return finalPassword;
 }
 
+//Creates password 
 function password(passLength, eligibleChars) {
   let pwd = "";
   for (var i = 0; i < passLength; i++) {
     pwd += eligibleChars.charAt(Math.floor(Math.random() * eligibleChars.length));
   }
-  return pwd;
+  return pwd; //Writes password to the page
 }
 
 // Add event listener to generate button
